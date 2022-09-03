@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <h1>Todo List</h1>
+         <div class="col-md-6">
+          <div class="input-group ">
+            <input type="text" class="form-control " aria-label="Sizing example input"  placeholder="Enter The Item" name="item"  #item>
+           
+ 
+            <button type="button" class="btn btn-primary" (click)="AddItem(item,label_action)">{{label_action}}</button>
+        </div>
+        <h2 *ngIf="itemList.length >0" class="mt-2">Item List</h2>
+        <div  class="" *ngFor="let item of  itemList;let indexOfelement=index;">
+           <app-add-element [element]="item"  [indexOfelement]="indexOfelement" (delete)="deleteItem($event)" (update)="updateItem($event)"></app-add-element>
+        </div>
+
+        </div>
+    </div>
+</div>
